@@ -20,14 +20,19 @@ console.log(priceTicket);
 // applicare sconto 20% se minorenne o 40% se over 65 
 let discount = 0; 
 
+let specialMessage = 'Sorry';
+
 if (userAge < 18){
 
   discount = priceTicket * 20 / 100;
+  specialMessage = 'con lo sconto del 20%';
+alert('clicca ok per avere uno sconto del 20%')
 
 } else if (userAge >= 65){
 
   discount = priceTicket * 40 / 100;
-  
+  specialMessage = 'con lo sconto del 40%';
+ alert('clicca ok per avere uno sconto del 40%')
 }
  console.log(discount)
 
@@ -40,5 +45,6 @@ const priceFinalRounded = priceFinal.toFixed(2)
 console.log(priceFinalRounded)
 
 // comunicare prezzo finale all'utente 
-let userMessage = 'Il costo del biglietto è di: '+ priceFinalRounded +'€';
+let userMessage = `Il costo del biglietto è di ${priceFinalRounded}€ ${specialMessage}`;
+// let userMessage = 'Il costo del biglietto è di: '+ priceFinalRounded +'€'+ specialMessage;
 alert(userMessage)
